@@ -1,0 +1,9 @@
+<h1>Response: <%= @response.answer %></h1>
+<h2>Topic: <%= @topic.question %></h2>
+
+<p><%= link_to "Edit response", edit_topic_response_path(@topic, @response) %></p>
+<p><%= link_to "Delete response", topic_response_path(@topic, @response),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to topic", topic_path(@topic) %></p>

@@ -1,0 +1,8 @@
+<h1>Add a new response:</h1>
+
+<%= form_for @response do |f| %>
+  <%= f.label :answer %>
+  <%= f.text_field :answer %>
+  <%= f.hidden_field :topic_id, :value => @topic.id %>
+  <p><%= f.submit %></p>
+<% end %>

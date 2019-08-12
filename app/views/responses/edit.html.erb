@@ -1,0 +1,7 @@
+<h1>Edit song:</h1>
+
+<%= form_for [@topic, @response] do |f| %>
+  <%= f.label :answer %>
+  <%= f.text_field :answer %>
+  <p><%= f.submit %></p>
+<% end %>

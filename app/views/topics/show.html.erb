@@ -1,0 +1,27 @@
+<h2>User: <%= @user.name %></h2>
+
+<h1>Topic: <%= @topic.question %></h1>
+
+<% if @topic.responses.any? %>
+  <h4>Here are the responses for this topic:</h4>
+
+  <% @topic.responses.each do |response| %>
+    <ul>
+      <li>
+        <%= link_to response.answer, response_path(@topic, response) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No responses are listed for this topic.</p>
+<% end %>
+
+<p><%= link_to "Add a response", new_response_path(topic_id: @topic.id) %></p>
+
+
+<p><%= link_to "Edit topic", edit_user_topic_path(@user, @topic) %></p>
+<p><%= link_to "Delete topic", user_topic_path(@user, @topic),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to user", user_path(@user) %></p>
